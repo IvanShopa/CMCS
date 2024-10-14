@@ -10,18 +10,18 @@ namespace Server
   {
     public static string Message(string ClientMessage)
     {
-      Regex Regex1 = new Regex(@"\s*clear\s*display\s*:\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex2 = new Regex(@"\s*draw\s*pixel\s*:\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex3 = new Regex(@"\s*draw\s*line\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex4 = new Regex(@"\s*draw\s*rectangle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex5 = new Regex(@"\s*fill\s*rectangle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex6 = new Regex(@"\s*draw\s*ellipse\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex7 = new Regex(@"\s*fill\s*ellipse\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex8 = new Regex(@"\s*draw\s*circle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex9 = new Regex(@"\s*fill\s*circle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex10 = new Regex(@"\s*draw\s*rounded\s*rectangle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex11 = new Regex(@"\s*fill\s*rounded\s*rectangle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
-      Regex Regex12 = new Regex(@"\s*draw\s*text\s*:\s*(\d+)\s*(\d+)\s*(\w+)\s*(\d+)\s*(\w+)\s*(\w+)\s*$", RegexOptions.IgnoreCase);
+      Regex Regex1 = new Regex(@"\s*clear\s*display\s*:\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex2 = new Regex(@"\s*draw\s*pixel\s*:\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex3 = new Regex(@"\s*draw\s*line\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex4 = new Regex(@"\s*draw\s*rectangle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex5 = new Regex(@"\s*fill\s*rectangle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex6 = new Regex(@"\s*draw\s*ellipse\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex7 = new Regex(@"\s*fill\s*ellipse\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex8 = new Regex(@"\s*draw\s*circle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex9 = new Regex(@"\s*fill\s*circle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex10 = new Regex(@"\s*draw\s*rounded\s*rectangle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex11 = new Regex(@"\s*fill\s*rounded\s*rectangle\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*red\s*$", RegexOptions.IgnoreCase);
+      Regex Regex12 = new Regex(@"\s*draw\s*text\s*:\s*(\d+)\s*(\d+)\s*arial\s*(\d+)\s*(\w+)\s*red\s*$", RegexOptions.IgnoreCase);
       Regex Regex13 = new Regex(@"\s*draw\s*image\s*:\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*([01]+)\s*$", RegexOptions.IgnoreCase);
 
       Match Match1;
