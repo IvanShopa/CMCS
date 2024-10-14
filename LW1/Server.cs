@@ -136,8 +136,8 @@ namespace Server
                "x0 - " + Match1.Groups[1].Value + ",\n" +
                "y0 - " + Match1.Groups[2].Value + ",\n" +
                "font - arial,\n" +
-               "length - " + Match1.Groups[4].Value + ",\n" +
-               "text - " + Match1.Groups[5].Value + ",\n" +
+               "length - " + Match1.Groups[3].Value + ",\n" +
+               "text - " + Match1.Groups[4].Value + ",\n" +
                "color - red.";
       }
       else if ((Match1 = Regex13.Match(ClientMessage)).Success)
