@@ -29,7 +29,7 @@ namespace Server
       if ((Match1 = Regex1.Match(ClientMessage)).Success)
       {
         return "\nCommand: clear display.\n" +
-               "Parameter: color - " + Match1.Groups[1].Value + ".";
+               "Parameter: color - red.";
       }
       else if ((Match1 = Regex2.Match(ClientMessage)).Success)
       {
@@ -37,7 +37,7 @@ namespace Server
                "Parameters:\n" +
                "x0 - " + Match1.Groups[1].Value + ",\n" +
                "y0 - " + Match1.Groups[2].Value + ",\n" +
-               "color - " + Match1.Groups[3].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex3.Match(ClientMessage)).Success)
       {
@@ -47,7 +47,7 @@ namespace Server
                "y0 - " + Match1.Groups[2].Value + ",\n" +
                "x1 - " + Match1.Groups[3].Value + ",\n" +
                "y2 - " + Match1.Groups[4].Value + ",\n" +
-               "color - " + Match1.Groups[5].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex4.Match(ClientMessage)).Success)
       {
@@ -57,7 +57,7 @@ namespace Server
                "y0 - " + Match1.Groups[2].Value + ",\n" +
                "w - " + Match1.Groups[3].Value + ",\n" +
                "h - " + Match1.Groups[4].Value + ",\n" +
-               "color - " + Match1.Groups[5].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex5.Match(ClientMessage)).Success)
       {
@@ -67,7 +67,7 @@ namespace Server
                "y0 - " + Match1.Groups[2].Value + ",\n" +
                "w - " + Match1.Groups[3].Value + ",\n" +
                "h - " + Match1.Groups[4].Value + ",\n" +
-               "color - " + Match1.Groups[5].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex6.Match(ClientMessage)).Success)
       {
@@ -77,7 +77,7 @@ namespace Server
                "y0 - " + Match1.Groups[2].Value + ",\n" +
                "radius_x - " + Match1.Groups[3].Value + ",\n" +
                "radius_y - " + Match1.Groups[4].Value + ",\n" +
-               "color - " + Match1.Groups[5].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex7.Match(ClientMessage)).Success)
       {
@@ -87,7 +87,7 @@ namespace Server
                "y0 - " + Match1.Groups[2].Value + ",\n" +
                "radius_x - " + Match1.Groups[3].Value + ",\n" +
                "radius_y - " + Match1.Groups[4].Value + ",\n" +
-               "color - " + Match1.Groups[5].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex8.Match(ClientMessage)).Success)
       {
@@ -96,7 +96,7 @@ namespace Server
                "x0 - " + Match1.Groups[1].Value + ",\n" +
                "y0 - " + Match1.Groups[2].Value + ",\n" +
                "radius - " + Match1.Groups[3].Value + ",\n" +
-               "color - " + Match1.Groups[4].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex9.Match(ClientMessage)).Success)
       {
@@ -105,7 +105,7 @@ namespace Server
                "x0 - " + Match1.Groups[1].Value + ",\n" +
                "y0 - " + Match1.Groups[2].Value + ",\n" +
                "radius - " + Match1.Groups[3].Value + ",\n" +
-               "color - " + Match1.Groups[4].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex10.Match(ClientMessage)).Success)
       {
@@ -116,7 +116,7 @@ namespace Server
                "w - " + Match1.Groups[3].Value + ",\n" +
                "h - " + Match1.Groups[4].Value + ",\n" +
                "radius - " + Match1.Groups[5].Value + ",\n" +
-               "color - " + Match1.Groups[6].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex11.Match(ClientMessage)).Success)
       {
@@ -127,7 +127,7 @@ namespace Server
                "w - " + Match1.Groups[3].Value + ",\n" +
                "h - " + Match1.Groups[4].Value + ",\n" +
                "radius - " + Match1.Groups[5].Value + ",\n" +
-               "color - " + Match1.Groups[6].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex12.Match(ClientMessage)).Success)
       {
@@ -135,10 +135,10 @@ namespace Server
                "Parameters:\n" +
                "x0 - " + Match1.Groups[1].Value + ",\n" +
                "y0 - " + Match1.Groups[2].Value + ",\n" +
-               "font - " + Match1.Groups[3].Value + ",\n" +
+               "font - arial,\n" +
                "length - " + Match1.Groups[4].Value + ",\n" +
                "text - " + Match1.Groups[5].Value + ",\n" +
-               "color - " + Match1.Groups[6].Value + ".";
+               "color - red.";
       }
       else if ((Match1 = Regex13.Match(ClientMessage)).Success)
       {
