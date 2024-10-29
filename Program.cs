@@ -77,25 +77,23 @@ namespace ConsoleApp
 
     public static void Parser(String Message)
     {
-      string Pattern1 = @"([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])";
-      string Pattern2 = $@"{Pattern1}\s+{Pattern1}\s+{Pattern1}";
-      Regex Regex1 = new Regex($@"\s*clear\s+display\s*:\s*{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex2 = new Regex($@"\s*draw\s*pixel\s*:\s*(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex3 = new Regex($@"\s*draw\s*line\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex4 = new Regex($@"\s*draw\s*rectangle\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex5 = new Regex($@"\s*fill\s*rectangle\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex6 = new Regex($@"\s*draw\s*ellipse\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex7 = new Regex($@"\s*fill\s*ellipse\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex8 = new Regex($@"\s*draw\s*circle\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex9 = new Regex($@"\s*fill\s*circle\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex10 = new Regex($@"\s*draw\s*rounded\s*rectangle\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex11 = new Regex($@"\s*fill\s*rounded\s*rectangle\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex12 = new Regex($@"\s*draw\s*text\s*:\s*(\d+)\s+(\d+)\s+arial\s+(\d+)\s+(\w+)\s+{Pattern2}\s*$", RegexOptions.IgnoreCase);
-      Regex Regex13 = new Regex(@"\s*draw\s*image\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+([01]+)\s*$", RegexOptions.IgnoreCase);
+      Regex RegexClearDisplay = new Regex(@"\s*clear\s+display\s*:\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawPixel = new Regex(@"\s*draw\s*pixel\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawLine = new Regex(@"\s*draw\s*line\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawRectangle = new Regex(@"\s*draw\s*rectangle\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexFillRectangle = new Regex(@"\s*fill\s*rectangle\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawEllipse = new Regex(@"\s*draw\s*ellipse\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexFillEllipse = new Regex(@"\s*fill\s*ellipse\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawCircle = new Regex(@"\s*draw\s*circle\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexFillCircle = new Regex(@"\s*fill\s*circle\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawRoundedRectangle = new Regex(@"\s*draw\s*rounded\s*rectangle\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexFillRoundedRectangle = new Regex(@"\s*fill\s*rounded\s*rectangle\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawText = new Regex(@"\s*draw\s*text\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*arial,\s*(\d+),\s*([\w+\s*]+),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawImage = new Regex(@"\s*draw\s*image\s*:\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*(-\d+|\d+),\s*([01]+)\s*$", RegexOptions.IgnoreCase);
 
       Match Match1;
 
-      if ((Match1 = Regex1.Match(Message)).Success)
+      if ((Match1 = RegexClearDisplay.Match(Message)).Success)
       {
         ClearDisplay ClearDisplay1 = new ClearDisplay();
         ClearDisplay1.Color1.Red = Byte.Parse(Match1.Groups[1].Value);
@@ -104,11 +102,11 @@ namespace ConsoleApp
 
         Console.Write("Command: Clear Display.\n" +
                       "Parameter:\n" +
-                      "Color.Red = " + ClearDisplay1.Color1.Red + ";\n" +
-                      "Color.Green = " + ClearDisplay1.Color1.Green + ";\n" +
-                      "Color.Blue = " + ClearDisplay1.Color1.Blue + ".\n\n");
+                      "Red = " + ClearDisplay1.Color1.Red + ";\n" +
+                      "Green = " + ClearDisplay1.Color1.Green + ";\n" +
+                      "Blue = " + ClearDisplay1.Color1.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex2.Match(Message)).Success)
+      else if ((Match1 = RegexDrawPixel.Match(Message)).Success)
       {
         DrawPixel DrawPixel1 = new DrawPixel();
         DrawPixel1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -121,11 +119,11 @@ namespace ConsoleApp
                       "Parameter:\n" +
                       "X = " + DrawPixel1.X + ";\n" +
                       "Y = " + DrawPixel1.Y + ";\n" +
-                      "Color.Red = " + DrawPixel1.Color2.Red + ";\n" +
-                      "Color.Green = " + DrawPixel1.Color2.Green + ";\n" +
-                      "Color.Blue = " + DrawPixel1.Color2.Blue + ".\n\n");
+                      "Red = " + DrawPixel1.Color2.Red + ";\n" +
+                      "Green = " + DrawPixel1.Color2.Green + ";\n" +
+                      "Blue = " + DrawPixel1.Color2.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex3.Match(Message)).Success)
+      else if ((Match1 = RegexDrawLine.Match(Message)).Success)
       {
         DrawLine DrawLine1 = new DrawLine();
         DrawLine1.X1 = Int16.Parse(Match1.Groups[1].Value);
@@ -142,11 +140,11 @@ namespace ConsoleApp
                       "Y1 = " + DrawLine1.Y1 + ";\n" +
                       "X2 = " + DrawLine1.X2 + ";\n" +
                       "Y2 = " + DrawLine1.Y2 + ";\n" +
-                      "Color.Red = " + DrawLine1.Color3.Red + ";\n" +
-                      "Color.Green = " + DrawLine1.Color3.Green + ";\n" +
-                      "Color.Blue = " + DrawLine1.Color3.Blue + ".\n\n");
+                      "Red = " + DrawLine1.Color3.Red + ";\n" +
+                      "Green = " + DrawLine1.Color3.Green + ";\n" +
+                      "Blue = " + DrawLine1.Color3.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex4.Match(Message)).Success)
+      else if ((Match1 = RegexDrawRectangle.Match(Message)).Success)
       {
         DrawRectangle DrawRectangle1 = new DrawRectangle();
         DrawRectangle1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -163,11 +161,11 @@ namespace ConsoleApp
                       "Y = " + DrawRectangle1.Y + ";\n" +
                       "W = " + DrawRectangle1.W + ";\n" +
                       "H = " + DrawRectangle1.H + ";\n" +
-                      "Color.Red = " + DrawRectangle1.Color4.Red + ";\n" +
-                      "Color.Green = " + DrawRectangle1.Color4.Green + ";\n" +
-                      "Color.Blue = " + DrawRectangle1.Color4.Blue + ".\n\n");
+                      "Red = " + DrawRectangle1.Color4.Red + ";\n" +
+                      "Green = " + DrawRectangle1.Color4.Green + ";\n" +
+                      "Blue = " + DrawRectangle1.Color4.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex5.Match(Message)).Success)
+      else if ((Match1 = RegexFillRectangle.Match(Message)).Success)
       {
         FillRectangle FillRectangle1 = new FillRectangle();
         FillRectangle1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -184,11 +182,11 @@ namespace ConsoleApp
                       "Y = " + FillRectangle1.Y + ";\n" +
                       "W = " + FillRectangle1.W + ";\n" +
                       "H = " + FillRectangle1.H + ";\n" +
-                      "Color.Red = " + FillRectangle1.Color5.Red + ";\n" +
-                      "Color.Green = " + FillRectangle1.Color5.Green + ";\n" +
-                      "Color.Blue = " + FillRectangle1.Color5.Blue + ".\n\n");
+                      "Red = " + FillRectangle1.Color5.Red + ";\n" +
+                      "Green = " + FillRectangle1.Color5.Green + ";\n" +
+                      "Blue = " + FillRectangle1.Color5.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex6.Match(Message)).Success)
+      else if ((Match1 = RegexDrawEllipse.Match(Message)).Success)
       {
         DrawEllipse DrawEllipse1 = new DrawEllipse();
         DrawEllipse1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -205,11 +203,11 @@ namespace ConsoleApp
                       "Y = " + DrawEllipse1.Y + ";\n" +
                       "W = " + DrawEllipse1.RadiusX + ";\n" +
                       "H = " + DrawEllipse1.RadiusX + ";\n" +
-                      "Color.Red = " + DrawEllipse1.Color6.Red + ";\n" +
-                      "Color.Green = " + DrawEllipse1.Color6.Green + ";\n" +
-                      "Color.Blue = " + DrawEllipse1.Color6.Blue + ".\n\n");
+                      "Red = " + DrawEllipse1.Color6.Red + ";\n" +
+                      "Green = " + DrawEllipse1.Color6.Green + ";\n" +
+                      "Blue = " + DrawEllipse1.Color6.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex7.Match(Message)).Success)
+      else if ((Match1 = RegexFillEllipse.Match(Message)).Success)
       {
         FillEllipse FillEllipse1 = new FillEllipse();
         FillEllipse1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -226,11 +224,11 @@ namespace ConsoleApp
                       "Y = " + FillEllipse1.Y + ";\n" +
                       "W = " + FillEllipse1.RadiusX + ";\n" +
                       "H = " + FillEllipse1.RadiusX + ";\n" +
-                      "Color.Red = " + FillEllipse1.Color7.Red + ";\n" +
-                      "Color.Green = " + FillEllipse1.Color7.Green + ";\n" +
-                      "Color.Blue = " + FillEllipse1.Color7.Blue + ".\n\n");
+                      "Red = " + FillEllipse1.Color7.Red + ";\n" +
+                      "Green = " + FillEllipse1.Color7.Green + ";\n" +
+                      "Blue = " + FillEllipse1.Color7.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex8.Match(Message)).Success)
+      else if ((Match1 = RegexDrawCircle.Match(Message)).Success)
       {
         DrawCircle DrawCircle1 = new DrawCircle();
         DrawCircle1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -245,11 +243,11 @@ namespace ConsoleApp
                       "X = " + DrawCircle1.X + ";\n" +
                       "Y = " + DrawCircle1.Y + ";\n" +
                       "Radius = " + DrawCircle1.Radius + ";\n" +
-                      "Color.Red = " + DrawCircle1.Color8.Red + ";\n" +
-                      "Color.Green = " + DrawCircle1.Color8.Green + ";\n" +
-                      "Color.Blue = " + DrawCircle1.Color8.Blue + ".\n\n");
+                      "Red = " + DrawCircle1.Color8.Red + ";\n" +
+                      "Green = " + DrawCircle1.Color8.Green + ";\n" +
+                      "Blue = " + DrawCircle1.Color8.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex9.Match(Message)).Success)
+      else if ((Match1 = RegexFillCircle.Match(Message)).Success)
       {
         FillCircle FillCircle1 = new FillCircle();
         FillCircle1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -264,11 +262,11 @@ namespace ConsoleApp
                       "X = " + FillCircle1.X + ";\n" +
                       "Y = " + FillCircle1.Y + ";\n" +
                       "Radius = " + FillCircle1.Radius + ";\n" +
-                      "Color.Red = " + FillCircle1.Color9.Red + ";\n" +
-                      "Color.Green = " + FillCircle1.Color9.Green + ";\n" +
-                      "Color.Blue = " + FillCircle1.Color9.Blue + ".\n\n");
+                      "Red = " + FillCircle1.Color9.Red + ";\n" +
+                      "Green = " + FillCircle1.Color9.Green + ";\n" +
+                      "Blue = " + FillCircle1.Color9.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex10.Match(Message)).Success)
+      else if ((Match1 = RegexDrawRoundedRectangle.Match(Message)).Success)
       {
         DrawRoundedRectangle DrawRoundedRectangle1 = new DrawRoundedRectangle();
         DrawRoundedRectangle1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -287,11 +285,11 @@ namespace ConsoleApp
                       "W = " + DrawRoundedRectangle1.W + ";\n" +
                       "H = " + DrawRoundedRectangle1.H + ";\n" +
                       "Radius = " + DrawRoundedRectangle1.Radius + ";\n" +
-                      "Color.Red = " + DrawRoundedRectangle1.Color10.Red + ";\n" +
-                      "Color.Green = " + DrawRoundedRectangle1.Color10.Green + ";\n" +
-                      "Color.Blue = " + DrawRoundedRectangle1.Color10.Blue + ".\n\n");
+                      "Red = " + DrawRoundedRectangle1.Color10.Red + ";\n" +
+                      "Green = " + DrawRoundedRectangle1.Color10.Green + ";\n" +
+                      "Blue = " + DrawRoundedRectangle1.Color10.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex11.Match(Message)).Success)
+      else if ((Match1 = RegexFillRoundedRectangle.Match(Message)).Success)
       {
         FillRoundedRectangle FillRoundedRectangle1 = new FillRoundedRectangle();
         FillRoundedRectangle1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -310,11 +308,11 @@ namespace ConsoleApp
                       "W = " + FillRoundedRectangle1.W + ";\n" +
                       "H = " + FillRoundedRectangle1.H + ";\n" +
                       "Radius = " + FillRoundedRectangle1.Radius + ";\n" +
-                      "Color.Red = " + FillRoundedRectangle1.Color11.Red + ";\n" +
-                      "Color.Green = " + FillRoundedRectangle1.Color11.Green + ";\n" +
-                      "Color.Blue = " + FillRoundedRectangle1.Color11.Blue + ".\n\n");
+                      "Red = " + FillRoundedRectangle1.Color11.Red + ";\n" +
+                      "Green = " + FillRoundedRectangle1.Color11.Green + ";\n" +
+                      "Blue = " + FillRoundedRectangle1.Color11.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex12.Match(Message)).Success)
+      else if ((Match1 = RegexDrawText.Match(Message)).Success)
       {
         DrawText DrawText1 = new DrawText();
         DrawText1.X = Int16.Parse(Match1.Groups[1].Value);
@@ -333,11 +331,11 @@ namespace ConsoleApp
                       "Font = " + DrawText1.Font + ";\n" +
                       "Length = " + DrawText1.Length + ";\n" +
                       "Text = " + DrawText1.Text + ";\n" +
-                      "Color.Red = " + DrawText1.Color12.Red + ";\n" +
-                      "Color.Green = " + DrawText1.Color12.Green + ";\n" +
-                      "Color.Blue = " + DrawText1.Color12.Blue + ".\n\n");
+                      "Red = " + DrawText1.Color12.Red + ";\n" +
+                      "Green = " + DrawText1.Color12.Green + ";\n" +
+                      "Blue = " + DrawText1.Color12.Blue + ".\n\n");
       }
-      else if ((Match1 = Regex13.Match(Message)).Success)
+      else if ((Match1 = RegexDrawImage.Match(Message)).Success)
       {
         DrawImage DrawImage1 = new DrawImage();
         DrawImage1.X = Int16.Parse(Match1.Groups[1].Value);
