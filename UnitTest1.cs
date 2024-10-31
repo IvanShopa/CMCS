@@ -10,7 +10,7 @@ namespace UnitTest
     [TestMethod]
     public void TestMethod1()
     {
-      String Message = " clear  Display :  -0, 128, 255";
+      String Message = " clear  Display :  -0, 128, 255.";
 
       Program.Command Command1 = Program.Function(Message);
 
@@ -18,7 +18,7 @@ namespace UnitTest
       if (Command1 is Program.ClearDisplay ClearDisplay2)
       {
         Result1 = "Result:" +
-                  "\nCommand: Clear Display.\n" +
+                  "\nCommand: " + ClearDisplay2.Name + ".\n" +
                   "Parameter:\n" +
                   "Red = " + ClearDisplay2.Color1.Red + ";\n" +
                   "Green = " + ClearDisplay2.Color1.Green + ";\n" +
@@ -42,7 +42,7 @@ namespace UnitTest
     [TestMethod]
     public void TestMethod2()
     {
-      string Message = " clear  Display :  0, 128, 255";
+      string Message = " clear  Display :  0, 128, 255.";
 
       Program.Command Command1 = Program.Function(Message);
 
@@ -50,7 +50,7 @@ namespace UnitTest
       if (Command1 is Program.ClearDisplay ClearDisplay2)
       {
         Result1 = "Result:" +
-                  "\nCommand: Clear Display.\n" +
+                  "\nCommand: " + ClearDisplay2.Name + ".\n" +
                   "Parameter:\n" +
                   "Red = " + ClearDisplay2.Color1.Red + ";\n" +
                   "Green = " + ClearDisplay2.Color1.Green + ";\n" +
