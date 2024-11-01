@@ -13,74 +13,74 @@ namespace ConsoleApp
     public class ClearDisplay : Command
     {
       public String Name;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class DrawPixel : Command
     {
       public String Name;
       public Int16 X, Y;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class DrawLine : Command
     {
       public String Name;
       public Int16 X1, Y1, X2, Y2;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class DrawRectangle : Command
     {
       public String Name;
       public Int16 X, Y, W, H;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class FillRectangle : Command
     {
       public String Name;
       public Int16 X, Y, W, H;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class DrawEllipse : Command
     {
       public String Name;
       public Int16 X, Y, RadiusX, RadiusY;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class FillEllipse : Command
     {
       public String Name;
       public Int16 X, Y, RadiusX, RadiusY;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class DrawCircle : Command
     {
       public String Name;
       public Int16 X, Y, Radius;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class FillCircle : Command
     {
       public String Name;
       public Int16 X, Y, Radius;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class DrawRoundedRectangle : Command
     {
       public String Name;
       public Int16 X, Y, W, H, Radius;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class FillRoundedRectangle : Command
     {
       public String Name;
       public Int16 X, Y, W, H, Radius;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class DrawText : Command
     {
       public String Name;
       public Int16 X, Y, Length;
       public String Font, Text;
-      public Color Color = new Color();
+      public Color color = new Color();
     }
     public class DrawImage : Command
     {
@@ -115,9 +115,9 @@ namespace ConsoleApp
       {
         ClearDisplay clearDisplay = new ClearDisplay();
         clearDisplay.Name = "clear display";
-        clearDisplay.Color.Red = Byte.Parse(Match1.Groups[1].Value);
-        clearDisplay.Color.Green = Byte.Parse(Match1.Groups[2].Value);
-        clearDisplay.Color.Blue = Byte.Parse(Match1.Groups[3].Value);
+        clearDisplay.color.Red = Byte.Parse(Match1.Groups[1].Value);
+        clearDisplay.color.Green = Byte.Parse(Match1.Groups[2].Value);
+        clearDisplay.color.Blue = Byte.Parse(Match1.Groups[3].Value);
         return clearDisplay;
       }
       else if ((Match1 = RegexDrawPixel.Match(Message)).Success)
@@ -126,9 +126,9 @@ namespace ConsoleApp
         drawPixel.Name = "draw pixel";
         drawPixel.X = Int16.Parse(Match1.Groups[1].Value);
         drawPixel.Y = Int16.Parse(Match1.Groups[2].Value);
-        drawPixel.Color.Red = Byte.Parse(Match1.Groups[3].Value);
-        drawPixel.Color.Green = Byte.Parse(Match1.Groups[4].Value);
-        drawPixel.Color.Blue = Byte.Parse(Match1.Groups[5].Value);
+        drawPixel.color.Red = Byte.Parse(Match1.Groups[3].Value);
+        drawPixel.color.Green = Byte.Parse(Match1.Groups[4].Value);
+        drawPixel.color.Blue = Byte.Parse(Match1.Groups[5].Value);
         return drawPixel;
       }
       else if ((Match1 = RegexDrawLine.Match(Message)).Success)
@@ -139,9 +139,9 @@ namespace ConsoleApp
         drawLine.Y1 = Int16.Parse(Match1.Groups[2].Value);
         drawLine.X2 = Int16.Parse(Match1.Groups[3].Value);
         drawLine.Y2 = Int16.Parse(Match1.Groups[4].Value);
-        drawLine.Color.Red = Byte.Parse(Match1.Groups[5].Value);
-        drawLine.Color.Green = Byte.Parse(Match1.Groups[6].Value);
-        drawLine.Color.Blue = Byte.Parse(Match1.Groups[7].Value);
+        drawLine.color.Red = Byte.Parse(Match1.Groups[5].Value);
+        drawLine.color.Green = Byte.Parse(Match1.Groups[6].Value);
+        drawLine.color.Blue = Byte.Parse(Match1.Groups[7].Value);
         return drawLine;
       }
       else if ((Match1 = RegexDrawRectangle.Match(Message)).Success)
@@ -152,9 +152,9 @@ namespace ConsoleApp
         drawRectangle.Y = Int16.Parse(Match1.Groups[2].Value);
         drawRectangle.W = Int16.Parse(Match1.Groups[3].Value);
         drawRectangle.H = Int16.Parse(Match1.Groups[4].Value);
-        drawRectangle.Color.Red = Byte.Parse(Match1.Groups[5].Value);
-        drawRectangle.Color.Green = Byte.Parse(Match1.Groups[6].Value);
-        drawRectangle.Color.Blue = Byte.Parse(Match1.Groups[7].Value);
+        drawRectangle.color.Red = Byte.Parse(Match1.Groups[5].Value);
+        drawRectangle.color.Green = Byte.Parse(Match1.Groups[6].Value);
+        drawRectangle.color.Blue = Byte.Parse(Match1.Groups[7].Value);
         return drawRectangle;
       }
       else if ((Match1 = RegexFillRectangle.Match(Message)).Success)
@@ -165,9 +165,9 @@ namespace ConsoleApp
         fillRectangle.Y = Int16.Parse(Match1.Groups[2].Value);
         fillRectangle.W = Int16.Parse(Match1.Groups[3].Value);
         fillRectangle.H = Int16.Parse(Match1.Groups[4].Value);
-        fillRectangle.Color.Red = Byte.Parse(Match1.Groups[5].Value);
-        fillRectangle.Color.Green = Byte.Parse(Match1.Groups[6].Value);
-        fillRectangle.Color.Blue = Byte.Parse(Match1.Groups[7].Value);
+        fillRectangle.color.Red = Byte.Parse(Match1.Groups[5].Value);
+        fillRectangle.color.Green = Byte.Parse(Match1.Groups[6].Value);
+        fillRectangle.color.Blue = Byte.Parse(Match1.Groups[7].Value);
         return fillRectangle;
       }
       else if ((Match1 = RegexDrawEllipse.Match(Message)).Success)
@@ -178,9 +178,9 @@ namespace ConsoleApp
         drawEllipse.Y = Int16.Parse(Match1.Groups[2].Value);
         drawEllipse.RadiusX = Int16.Parse(Match1.Groups[3].Value);
         drawEllipse.RadiusY = Int16.Parse(Match1.Groups[4].Value);
-        drawEllipse.Color.Red = Byte.Parse(Match1.Groups[5].Value);
-        drawEllipse.Color.Green = Byte.Parse(Match1.Groups[6].Value);
-        drawEllipse.Color.Blue = Byte.Parse(Match1.Groups[7].Value);
+        drawEllipse.color.Red = Byte.Parse(Match1.Groups[5].Value);
+        drawEllipse.color.Green = Byte.Parse(Match1.Groups[6].Value);
+        drawEllipse.color.Blue = Byte.Parse(Match1.Groups[7].Value);
         return drawEllipse;
       }
       else if ((Match1 = RegexFillEllipse.Match(Message)).Success)
@@ -191,9 +191,9 @@ namespace ConsoleApp
         fillEllipse.Y = Int16.Parse(Match1.Groups[2].Value);
         fillEllipse.RadiusX = Int16.Parse(Match1.Groups[3].Value);
         fillEllipse.RadiusY = Int16.Parse(Match1.Groups[4].Value);
-        fillEllipse.Color.Red = Byte.Parse(Match1.Groups[5].Value);
-        fillEllipse.Color.Green = Byte.Parse(Match1.Groups[6].Value);
-        fillEllipse.Color.Blue = Byte.Parse(Match1.Groups[7].Value);
+        fillEllipse.color.Red = Byte.Parse(Match1.Groups[5].Value);
+        fillEllipse.color.Green = Byte.Parse(Match1.Groups[6].Value);
+        fillEllipse.color.Blue = Byte.Parse(Match1.Groups[7].Value);
         return fillEllipse;
       }
       else if ((Match1 = RegexDrawCircle.Match(Message)).Success)
@@ -203,9 +203,9 @@ namespace ConsoleApp
         drawCircle.X = Int16.Parse(Match1.Groups[1].Value);
         drawCircle.Y = Int16.Parse(Match1.Groups[2].Value);
         drawCircle.Radius = Int16.Parse(Match1.Groups[3].Value);
-        drawCircle.Color.Red = Byte.Parse(Match1.Groups[4].Value);
-        drawCircle.Color.Green = Byte.Parse(Match1.Groups[5].Value);
-        drawCircle.Color.Blue = Byte.Parse(Match1.Groups[6].Value);
+        drawCircle.color.Red = Byte.Parse(Match1.Groups[4].Value);
+        drawCircle.color.Green = Byte.Parse(Match1.Groups[5].Value);
+        drawCircle.color.Blue = Byte.Parse(Match1.Groups[6].Value);
         return drawCircle;
       }
       else if ((Match1 = RegexFillCircle.Match(Message)).Success)
@@ -215,9 +215,9 @@ namespace ConsoleApp
         fillCircle.X = Int16.Parse(Match1.Groups[1].Value);
         fillCircle.Y = Int16.Parse(Match1.Groups[2].Value);
         fillCircle.Radius = Int16.Parse(Match1.Groups[3].Value);
-        fillCircle.Color.Red = Byte.Parse(Match1.Groups[4].Value);
-        fillCircle.Color.Green = Byte.Parse(Match1.Groups[5].Value);
-        fillCircle.Color.Blue = Byte.Parse(Match1.Groups[6].Value);
+        fillCircle.color.Red = Byte.Parse(Match1.Groups[4].Value);
+        fillCircle.color.Green = Byte.Parse(Match1.Groups[5].Value);
+        fillCircle.color.Blue = Byte.Parse(Match1.Groups[6].Value);
         return fillCircle;
       }
       else if ((Match1 = RegexDrawRoundedRectangle.Match(Message)).Success)
@@ -229,9 +229,9 @@ namespace ConsoleApp
         drawRoundedRectangle.W = Int16.Parse(Match1.Groups[3].Value);
         drawRoundedRectangle.H = Int16.Parse(Match1.Groups[4].Value);
         drawRoundedRectangle.Radius = Int16.Parse(Match1.Groups[5].Value);
-        drawRoundedRectangle.Color.Red = Byte.Parse(Match1.Groups[6].Value);
-        drawRoundedRectangle.Color.Green = Byte.Parse(Match1.Groups[7].Value);
-        drawRoundedRectangle.Color.Blue = Byte.Parse(Match1.Groups[8].Value);
+        drawRoundedRectangle.color.Red = Byte.Parse(Match1.Groups[6].Value);
+        drawRoundedRectangle.color.Green = Byte.Parse(Match1.Groups[7].Value);
+        drawRoundedRectangle.color.Blue = Byte.Parse(Match1.Groups[8].Value);
         return drawRoundedRectangle;
       }
       else if ((Match1 = RegexFillRoundedRectangle.Match(Message)).Success)
@@ -243,9 +243,9 @@ namespace ConsoleApp
         fillRoundedRectangle.W = Int16.Parse(Match1.Groups[3].Value);
         fillRoundedRectangle.H = Int16.Parse(Match1.Groups[4].Value);
         fillRoundedRectangle.Radius = Int16.Parse(Match1.Groups[5].Value);
-        fillRoundedRectangle.Color.Red = Byte.Parse(Match1.Groups[6].Value);
-        fillRoundedRectangle.Color.Green = Byte.Parse(Match1.Groups[7].Value);
-        fillRoundedRectangle.Color.Blue = Byte.Parse(Match1.Groups[8].Value);
+        fillRoundedRectangle.color.Red = Byte.Parse(Match1.Groups[6].Value);
+        fillRoundedRectangle.color.Green = Byte.Parse(Match1.Groups[7].Value);
+        fillRoundedRectangle.color.Blue = Byte.Parse(Match1.Groups[8].Value);
         return fillRoundedRectangle;
       }
       else if ((Match1 = RegexDrawText.Match(Message)).Success)
@@ -257,9 +257,9 @@ namespace ConsoleApp
         drawText.Font = "Arial";
         drawText.Length = Int16.Parse(Match1.Groups[3].Value);
         drawText.Text = Match1.Groups[4].Value;
-        drawText.Color.Red = Byte.Parse(Match1.Groups[5].Value);
-        drawText.Color.Green = Byte.Parse(Match1.Groups[6].Value);
-        drawText.Color.Blue = Byte.Parse(Match1.Groups[7].Value);
+        drawText.color.Red = Byte.Parse(Match1.Groups[5].Value);
+        drawText.color.Green = Byte.Parse(Match1.Groups[6].Value);
+        drawText.color.Blue = Byte.Parse(Match1.Groups[7].Value);
         return drawText;
       }
       else if ((Match1 = RegexDrawImage.Match(Message)).Success)
@@ -294,9 +294,9 @@ namespace ConsoleApp
         {
           Console.Write("\nCommand: " + ClearDisplay2.Name + ".\n" +
                         "Parameter:\n" +
-                        "Red = " + ClearDisplay2.Color.Red + ";\n" +
-                        "Green = " + ClearDisplay2.Color.Green + ";\n" +
-                        "Blue = " + ClearDisplay2.Color.Blue + ".\n\n");
+                        "Red = " + ClearDisplay2.color.Red + ";\n" +
+                        "Green = " + ClearDisplay2.color.Green + ";\n" +
+                        "Blue = " + ClearDisplay2.color.Blue + ".\n\n");
         }
         else if (Command1 is DrawPixel DrawPixel2)
         {
@@ -304,9 +304,9 @@ namespace ConsoleApp
                         "Parameter:\n" +
                         "X = " + DrawPixel2.X + ";\n" +
                         "Y = " + DrawPixel2.Y + ";\n" +
-                        "Red = " + DrawPixel2.Color.Red + ";\n" +
-                        "Green = " + DrawPixel2.Color.Green + ";\n" +
-                        "Blue = " + DrawPixel2.Color.Blue + ".\n\n");
+                        "Red = " + DrawPixel2.color.Red + ";\n" +
+                        "Green = " + DrawPixel2.color.Green + ";\n" +
+                        "Blue = " + DrawPixel2.color.Blue + ".\n\n");
         }
         else if (Command1 is DrawLine DrawLine2)
         {
@@ -316,9 +316,9 @@ namespace ConsoleApp
                         "Y1 = " + DrawLine2.Y1 + ";\n" +
                         "X2 = " + DrawLine2.X2 + ";\n" +
                         "Y2 = " + DrawLine2.Y2 + ";\n" +
-                        "Red = " + DrawLine2.Color.Red + ";\n" +
-                        "Green = " + DrawLine2.Color.Green + ";\n" +
-                        "Blue = " + DrawLine2.Color.Blue + ".\n\n");
+                        "Red = " + DrawLine2.color.Red + ";\n" +
+                        "Green = " + DrawLine2.color.Green + ";\n" +
+                        "Blue = " + DrawLine2.color.Blue + ".\n\n");
         }
         else if (Command1 is DrawRectangle DrawRectangle2)
         {
@@ -328,9 +328,9 @@ namespace ConsoleApp
                         "Y = " + DrawRectangle2.Y + ";\n" +
                         "W = " + DrawRectangle2.W + ";\n" +
                         "H = " + DrawRectangle2.H + ";\n" +
-                        "Red = " + DrawRectangle2.Color.Red + ";\n" +
-                        "Green = " + DrawRectangle2.Color.Green + ";\n" +
-                        "Blue = " + DrawRectangle2.Color.Blue + ".\n\n");
+                        "Red = " + DrawRectangle2.color.Red + ";\n" +
+                        "Green = " + DrawRectangle2.color.Green + ";\n" +
+                        "Blue = " + DrawRectangle2.color.Blue + ".\n\n");
         }
         else if (Command1 is FillRectangle FillRectangle2)
         {
@@ -340,9 +340,9 @@ namespace ConsoleApp
                         "Y = " + FillRectangle2.Y + ";\n" +
                         "W = " + FillRectangle2.W + ";\n" +
                         "H = " + FillRectangle2.H + ";\n" +
-                        "Red = " + FillRectangle2.Color.Red + ";\n" +
-                        "Green = " + FillRectangle2.Color.Green + ";\n" +
-                        "Blue = " + FillRectangle2.Color.Blue + ".\n\n");
+                        "Red = " + FillRectangle2.color.Red + ";\n" +
+                        "Green = " + FillRectangle2.color.Green + ";\n" +
+                        "Blue = " + FillRectangle2.color.Blue + ".\n\n");
         }
         else if (Command1 is DrawEllipse DrawEllipse2)
         {
@@ -352,9 +352,9 @@ namespace ConsoleApp
                         "Y = " + DrawEllipse2.Y + ";\n" +
                         "W = " + DrawEllipse2.RadiusX + ";\n" +
                         "H = " + DrawEllipse2.RadiusX + ";\n" +
-                        "Red = " + DrawEllipse2.Color.Red + ";\n" +
-                        "Green = " + DrawEllipse2.Color.Green + ";\n" +
-                        "Blue = " + DrawEllipse2.Color.Blue + ".\n\n");
+                        "Red = " + DrawEllipse2.color.Red + ";\n" +
+                        "Green = " + DrawEllipse2.color.Green + ";\n" +
+                        "Blue = " + DrawEllipse2.color.Blue + ".\n\n");
         }
         else if (Command1 is FillEllipse FillEllipse2)
         {
@@ -364,9 +364,9 @@ namespace ConsoleApp
                         "Y = " + FillEllipse2.Y + ";\n" +
                         "W = " + FillEllipse2.RadiusX + ";\n" +
                         "H = " + FillEllipse2.RadiusX + ";\n" +
-                        "Red = " + FillEllipse2.Color.Red + ";\n" +
-                        "Green = " + FillEllipse2.Color.Green + ";\n" +
-                        "Blue = " + FillEllipse2.Color.Blue + ".\n\n");
+                        "Red = " + FillEllipse2.color.Red + ";\n" +
+                        "Green = " + FillEllipse2.color.Green + ";\n" +
+                        "Blue = " + FillEllipse2.color.Blue + ".\n\n");
         }
         else if (Command1 is DrawCircle DrawCircle2)
         {
@@ -375,9 +375,9 @@ namespace ConsoleApp
                         "X = " + DrawCircle2.X + ";\n" +
                         "Y = " + DrawCircle2.Y + ";\n" +
                         "Radius = " + DrawCircle2.Radius + ";\n" +
-                        "Red = " + DrawCircle2.Color.Red + ";\n" +
-                        "Green = " + DrawCircle2.Color.Green + ";\n" +
-                        "Blue = " + DrawCircle2.Color.Blue + ".\n\n");
+                        "Red = " + DrawCircle2.color.Red + ";\n" +
+                        "Green = " + DrawCircle2.color.Green + ";\n" +
+                        "Blue = " + DrawCircle2.color.Blue + ".\n\n");
         }
         else if (Command1 is FillCircle FillCircle2)
         {
@@ -386,9 +386,9 @@ namespace ConsoleApp
                         "X = " + FillCircle2.X + ";\n" +
                         "Y = " + FillCircle2.Y + ";\n" +
                         "Radius = " + FillCircle2.Radius + ";\n" +
-                        "Red = " + FillCircle2.Color.Red + ";\n" +
-                        "Green = " + FillCircle2.Color.Green + ";\n" +
-                        "Blue = " + FillCircle2.Color.Blue + ".\n\n");
+                        "Red = " + FillCircle2.color.Red + ";\n" +
+                        "Green = " + FillCircle2.color.Green + ";\n" +
+                        "Blue = " + FillCircle2.color.Blue + ".\n\n");
         }
         else if (Command1 is DrawRoundedRectangle DrawRoundedRectangle2)
         {
@@ -399,9 +399,9 @@ namespace ConsoleApp
                         "W = " + DrawRoundedRectangle2.W + ";\n" +
                         "H = " + DrawRoundedRectangle2.H + ";\n" +
                         "Radius = " + DrawRoundedRectangle2.Radius + ";\n" +
-                        "Red = " + DrawRoundedRectangle2.Color.Red + ";\n" +
-                        "Green = " + DrawRoundedRectangle2.Color.Green + ";\n" +
-                        "Blue = " + DrawRoundedRectangle2.Color.Blue + ".\n\n");
+                        "Red = " + DrawRoundedRectangle2.color.Red + ";\n" +
+                        "Green = " + DrawRoundedRectangle2.color.Green + ";\n" +
+                        "Blue = " + DrawRoundedRectangle2.color.Blue + ".\n\n");
         }
         else if (Command1 is FillRoundedRectangle FillRoundedRectangle2)
         {
@@ -412,9 +412,9 @@ namespace ConsoleApp
                         "W = " + FillRoundedRectangle2.W + ";\n" +
                         "H = " + FillRoundedRectangle2.H + ";\n" +
                         "Radius = " + FillRoundedRectangle2.Radius + ";\n" +
-                        "Red = " + FillRoundedRectangle2.Color.Red + ";\n" +
-                        "Green = " + FillRoundedRectangle2.Color.Green + ";\n" +
-                        "Blue = " + FillRoundedRectangle2.Color.Blue + ".\n\n");
+                        "Red = " + FillRoundedRectangle2.color.Red + ";\n" +
+                        "Green = " + FillRoundedRectangle2.color.Green + ";\n" +
+                        "Blue = " + FillRoundedRectangle2.color.Blue + ".\n\n");
         }
         else if (Command1 is DrawText DrawText2)
         {
@@ -425,9 +425,9 @@ namespace ConsoleApp
                         "Font = " + DrawText2.Font + ";\n" +
                         "Length = " + DrawText2.Length + ";\n" +
                         "Text = " + DrawText2.Text + ";\n" +
-                        "Red = " + DrawText2.Color.Red + ";\n" +
-                        "Green = " + DrawText2.Color.Green + ";\n" +
-                        "Blue = " + DrawText2.Color.Blue + ".\n\n");
+                        "Red = " + DrawText2.color.Red + ";\n" +
+                        "Green = " + DrawText2.color.Green + ";\n" +
+                        "Blue = " + DrawText2.color.Blue + ".\n\n");
         }
         else if (Command1 is DrawImage DrawImage2)
         {
