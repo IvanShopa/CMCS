@@ -73,7 +73,7 @@ namespace ConsoleApp
     {
       public String Name;
       public Int16 X, Y, W, H, Radius;
-      public Color Color11 = new Color();
+      public Color color = new Color();
     }
     public class DrawText : Command
     {
@@ -113,7 +113,7 @@ namespace ConsoleApp
 
       if ((Match1 = RegexClearDisplay.Match(Message)).Success)
       {
-        ClearDisplay ClearDisplay1 = new ClearDisplay();
+        ClearDisplay clearDisplay = new ClearDisplay();
         ClearDisplay1.Name = "Clear Display";
         ClearDisplay1.Color1.Red = Byte.Parse(Match1.Groups[1].Value);
         ClearDisplay1.Color1.Green = Byte.Parse(Match1.Groups[2].Value);
