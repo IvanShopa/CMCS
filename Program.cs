@@ -275,9 +275,9 @@ namespace ConsoleApp
       }
       else
       {
-        Error Error1 = new Error();
-        Error1.Text = " Error.\n\n";
-        return Error1;
+        Error error = new Error();
+        error.Text = " Error.\n\n";
+        return error;
       }
     }
 
