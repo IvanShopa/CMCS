@@ -19,5 +19,17 @@ namespace UnitTest
       Assert.AreEqual(128, command.color.Green);
       Assert.AreEqual(255, command.color.Blue);
     }
+
+    [TestMethod]
+    public void TestMethod2()
+    {
+      String Message = "  clear  Display :  -0, 128, 255.    ";
+      Program.ClearDisplay command = (ClearDisplay)Program.Function(Message);
+
+      Assert.AreEqual("clear display", command.Name);
+      Assert.AreEqual(0, command.color.Red);
+      Assert.AreEqual(128, command.color.Green);
+      Assert.AreEqual(255, command.color.Blue);
+    }
   }
 }
