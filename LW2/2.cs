@@ -98,19 +98,19 @@ namespace Server
 
     public static Command Function(String Message)
     {
-      Regex RegexClearDisplay = new Regex(@"\s*clear\s+display\s*:\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexDrawPixel = new Regex(@"\s*draw\s*pixel\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexDrawLine = new Regex(@"\s*draw\s*line\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexDrawRectangle = new Regex(@"\s*draw\s*rectangle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexFillRectangle = new Regex(@"\s*fill\s*rectangle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexDrawEllipse = new Regex(@"\s*draw\s*ellipse\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexFillEllipse = new Regex(@"\s*fill\s*ellipse\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexDrawCircle = new Regex(@"\s*draw\s*circle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexFillCircle = new Regex(@"\s*fill\s*circle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexDrawRoundedRectangle = new Regex(@"\s*draw\s*rounded\s*rectangle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexFillRoundedRectangle = new Regex(@"\s*fill\s*rounded\s*rectangle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexDrawText = new Regex(@"\s*draw\s*text\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*arial\s*,\s*(\d+)\s*,\s*([\w+\s*]+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
-      Regex RegexDrawImage = new Regex(@"\s*draw\s*image\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([01]+)\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexClearDisplay = new Regex(@"^\s*clear\s+display\s*:\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawPixel = new Regex(@"^\s*draw\s*pixel\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawLine = new Regex(@"^\s*draw\s*line\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawRectangle = new Regex(@"^\s*draw\s*rectangle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexFillRectangle = new Regex(@"^\s*fill\s*rectangle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawEllipse = new Regex(@"^\s*draw\s*ellipse\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexFillEllipse = new Regex(@"^\s*fill\s*ellipse\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawCircle = new Regex(@"^\s*draw\s*circle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexFillCircle = new Regex(@"^\s*fill\s*circle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawRoundedRectangle = new Regex(@"^\s*draw\s*rounded\s*rectangle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexFillRoundedRectangle = new Regex(@"^\s*fill\s*rounded\s*rectangle\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawText = new Regex(@"^\s*draw\s*text\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*arial\s*,\s*(\d+)\s*,\s*([\w+\s*]+)\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\s*\.\s*$", RegexOptions.IgnoreCase);
+      Regex RegexDrawImage = new Regex(@"^\s*draw\s*image\s*:\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*(-\d+|\d+)\s*,\s*([01]+)\s*\.\s*$", RegexOptions.IgnoreCase);
 
       Match Match1;
 
@@ -290,7 +290,7 @@ namespace Server
 
       Socket ServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
-      IPEndPoint ServerIPEndPoint = new IPEndPoint(IPAddress.Parse("_._._._"), 1);
+      IPEndPoint ServerIPEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 1);
       EndPoint ServerEndPoint = (EndPoint)ServerIPEndPoint;
 
       ServerSocket.Bind(ServerEndPoint);
@@ -307,7 +307,7 @@ namespace Server
         int ClientMessageByte = ServerSocket.ReceiveFrom(Buffer, ref ClientEndPoint);
         string ClientMessage = Encoding.UTF8.GetString(Buffer, 0, ClientMessageByte);
         Console.WriteLine(ClientMessage);
-        Regex RegexExit = new Regex(@"\s*exit\s*\.\s*$", RegexOptions.IgnoreCase);
+        Regex RegexExit = new Regex(@"^\s*exit\s*\.\s*$", RegexOptions.IgnoreCase);
         if ((RegexExit.Match(ClientMessage)).Success)
         {
           Console.WriteLine();
