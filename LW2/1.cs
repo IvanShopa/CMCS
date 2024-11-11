@@ -26,7 +26,7 @@ namespace Client
         string ClientMessage = Console.ReadLine();
         byte[] ClientMessageByte = Encoding.UTF8.GetBytes(ClientMessage);
         ClientSocket.SendTo(ClientMessageByte, ServerEndPoint);
-        Regex RegexExit = new Regex(@"\s*exit\s*\.\s*$", RegexOptions.IgnoreCase);
+        Regex RegexExit = new Regex(@"^\s*exit\s*\.\s*$", RegexOptions.IgnoreCase);
         if ((RegexExit.Match(ClientMessage)).Success)
         {
           Console.WriteLine();
