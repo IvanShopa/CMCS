@@ -9,7 +9,6 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System;
 
-using static Server.BitmapAndGraphics;
 using static Server.ClassCommand;
 using static Server.FunctionCommand;
 
@@ -17,6 +16,9 @@ namespace Server
 {
   public partial class Form1 : Form
   {
+    public static Bitmap Canvas;
+    public static Graphics CanvasGraphics;
+
     public Form1()
     {
       InitializeComponent();
