@@ -1,4 +1,4 @@
-﻿#include <winsock.h>
+#include <winsock.h>
 #include <windows.h>
 #include <stdio.h>
 #include <string>
@@ -27,15 +27,15 @@ class Display : public GraphicsLib
 
 		int get_red(uint_least16_t color)
 		{
-			return 1;
+			return 74;
 		}
 		int get_green(uint_least16_t color)
 		{
-			return 2;
+			return 134;
 		}
 		int get_blue(uint_least16_t color)
 		{
-			return 3;
+			return 232;
 		}
 		void send_command(std::string command)
 		{
@@ -46,7 +46,10 @@ class Display : public GraphicsLib
 			int red = get_red(color);
 			int green = get_green(color);
 			int blue = get_blue(color);
-			std::string command = "clear display: 255, 0, 0.";
+			std::string command = "clear display: " +
+						std::to_string(red) + ", " +
+						std::to_string(green) + ", " +
+						std::to_string(blue) + ".";
 			send_command(command);
 		}
 };
