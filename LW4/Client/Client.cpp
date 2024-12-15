@@ -9,75 +9,75 @@
 
 class Display : public GraphicsLib
 {
-	public:
+  public:
   SOCKET ClientSocket;
   SOCKADDR_IN ServerAddress;
   int ServerAddressSize;
 
   Display(uint16_t width, uint16_t height, std::string host, uint16_t port)
   {
-  	WSAData Data;
-  	WSAStartup(MAKEWORD(2, 2), &Data);
-  	ClientSocket = socket(AF_INET, SOCK_DGRAM, 0);
-  	ServerAddress.sin_family = AF_INET;
-  	ServerAddress.sin_port = htons(port);
-  	ServerAddress.sin_addr.s_addr = inet_addr(host.c_str());
-  	ServerAddressSize = sizeof(ServerAddress);
+    WSAData Data;
+    WSAStartup(MAKEWORD(2, 2), &Data);
+    ClientSocket = socket(AF_INET, SOCK_DGRAM, 0);
+    ServerAddress.sin_family = AF_INET;
+    ServerAddress.sin_port = htons(port);
+    ServerAddress.sin_addr.s_addr = inet_addr(host.c_str());
+    ServerAddressSize = sizeof(ServerAddress);
   }
 
   int get_red(uint_least16_t color)
   {
-  	return 255;
+    return 255;
   }
   int get_green(uint_least16_t color)
   {
-  	return 0;
+    return 0;
   }
   int get_blue(uint_least16_t color)
   {
-  	return 0;
+    return 0;
   }
   void send_command(std::string command)
   {
-  	sendto(
+    sendto(
     ClientSocket,
     command.c_str(),
     command.size(), 0,
     (SOCKADDR*)&ServerAddress,
     ServerAddressSize
-  	);
+    );
   }
 
   void fillScreen(uint_least16_t color)
   {
-  	int red = get_red(color);
-  	int green = get_green(color);
-  	int blue = get_blue(color);
-  	std::string command = "clear display: " +
-                              std::to_string(red) + ", " +
-                              std::to_string(green) + ", " +
-                              std::to_string(blue) + ".";
-  	send_command(command);
+    int red = get_red(color);
+    int green = get_green(color);
+    int blue = get_blue(color);
+    std::string command = "clear display: " +
+                          std::to_string(red) + ", " +
+                          std::to_string(green) + ", " +
+                          std::to_string(blue) + ".";
+    send_command(command);
   }
   void drawPixel(int_least16_t x0, int_least16_t y0, uint_least16_t color)
   {
-  	int red = get_red(color);
-  	int green = get_green(color);
-  	int blue = get_blue(color);
-  	std::string command = "draw pixel: " +
-                              std::to_string(x0) + ", " +
-                              std::to_string(y0) + ", " +
-                              std::to_string(red) + ", " +
-                              std::to_string(green) + ", " +
-                              std::to_string(blue) + ".";
-  	send_command(command);
+    int red = get_red(color);
+    int green = get_green(color);
+    int blue = get_blue(color);
+    std::string command = "draw pixel: " +
+                          std::to_string(x0) + ", " +
+                          std::to_string(y0) + ", " +
+                          std::to_string(red) + ", " +
+                          std::to_string(green) + ", " +
+                          std::to_string(blue) + ".";
+    send_command(command);
   }
 };
 
 int main()
 {
-	Display display(400, 300, "127.0.0.1", 1);
-	// display.fillScreen(0x1111);
-	display.drawPixel(96, 76, 0x1111);
-	return 0;
+  Display display(400, 300, "127.0.0.1", 1);
+  // display.fillScreen(0x1111);
+  display.drawPixel(96, 76, 0x1111);
+  return 0;
 }
